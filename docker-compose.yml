@@ -19,7 +19,7 @@ services:
   spark-worker:
     <<: *spark
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker
-             spark://spark-master:7077 --cores 2 --memory 3g
+             spark://spark-master:7077 --cores 2 --memory 1g
     depends_on: [spark-master]
     volumes:
       - ./conf:/opt/spark/conf:ro
@@ -31,7 +31,7 @@ services:
     hostname: jupyter                        
     command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
              --ServerApp.token= --ServerApp.password= --ServerApp.root_dir=/work
-    depends_on: [spark-master, mongo]
+    depends_on: [mongo]
     ports:
       - "8888:8888"
       - "4040:4040"
