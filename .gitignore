@@ -1,0 +1,9 @@
+events/*
+!events/.gitkeep
+resultats/*
+!resultats/.gitkeep
+notebooks/.ipynb_checkpoints/
+
+# Données fournies par l'exercice (trop volumineuses pour git)
+data/*
+!data/.gitkeep
